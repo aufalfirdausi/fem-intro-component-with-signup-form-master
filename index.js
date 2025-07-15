@@ -1,13 +1,12 @@
 const allDiv = document.querySelectorAll('.identity')
 const button = document.getElementById('btn-submit')
 const errorDiv = []
-const messageError = [
+let messageError = [
     'First Name cannot be empty',
     'Last Name cannot be empty',
     'Looks like is not an email',
     'Password cannot be empty'
 ]
-const validEmail = 'muhammadaufa@gmail.com'
 
 allDiv.forEach((div, index) => {
     const newDiv = document.createElement('div')
@@ -41,10 +40,10 @@ allDiv.forEach((div, index) => {
     if (input && input.value.trim() === '') {
         errorDiv[index].style.visibility = 'visible'
         errorIcon.style.visibility = 'visible'
+        div.style.border = '2px solid red'
     } else {
         errorDiv[index].style.visibility = 'hidden'
     }
 })
 
 })
-
